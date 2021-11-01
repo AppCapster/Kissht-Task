@@ -1,9 +1,9 @@
 package com.monika.kisshttask.ui.main
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import com.monika.kisshttask.R
 import com.monika.kisshttask.ui.canvas.CanvasActivity
 import com.monika.kisshttask.ui.jetpack.JetpackActivity

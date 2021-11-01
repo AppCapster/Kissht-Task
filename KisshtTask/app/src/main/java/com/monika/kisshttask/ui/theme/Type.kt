@@ -1,4 +1,4 @@
-package com.monika.kisshttask.ui.jetpack.ui.theme
+package com.monika.kisshttask.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
