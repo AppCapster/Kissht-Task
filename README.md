@@ -13,7 +13,7 @@ The sample app presents a modern Android application Architecture that is scalab
 - Custom View
 
 # References
-https://github.com/android/compose-samples
-https://github.com/android/architecture-components-samples
-https://github.com/android/sunflower
+- https://github.com/android/compose-samples
+- https://github.com/android/architecture-components-samples
+- https://github.com/android/sunflower
 
