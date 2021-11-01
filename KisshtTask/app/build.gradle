@@ -1,7 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
+apply from: '../dependenciesversion.gradle'
 
 android {
     compileSdk 31
@@ -14,6 +16,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
     }
 
     buildTypes {
@@ -28,16 +33,56 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        useIR = true
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion versions.composeVersion
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
     }
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.6.0'
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    // material
+    implementation "com.google.android.material:material:$versions.materialVersion"
+
+    // compose
+    implementation "androidx.compose.ui:ui:$versions.composeVersion"
+    implementation "androidx.activity:activity-compose:$versions.activityVersion"
+    implementation "androidx.compose.material:material:$versions.composeVersion"
+    implementation "androidx.compose.material:material-icons-extended:$versions.composeVersion"
+    implementation "androidx.compose.foundation:foundation:$versions.composeVersion"
+    implementation "androidx.compose.foundation:foundation-layout:$versions.composeVersion"
+    implementation "androidx.compose.animation:animation:$versions.composeVersion"
+    implementation "androidx.compose.runtime:runtime:$versions.composeVersion"
+    implementation "androidx.compose.runtime:runtime-livedata:$versions.composeVersion"
+    implementation "androidx.navigation:navigation-compose:$versions.composeNavVersion"
+    implementation "androidx.compose.ui:ui-tooling:$versions.composeVersion"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$versions.composeVersion"
+    implementation "androidx.constraintlayout:constraintlayout-compose:$versions.constraintVersion"
+
+    // architecture components
+    implementation "androidx.fragment:fragment-ktx:$versions.fragmentVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$versions.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycleVersion"
+    implementation "androidx.room:room-runtime:$versions.roomVersion"
+    implementation "androidx.room:room-ktx:$versions.roomVersion"
+    kapt "androidx.room:room-compiler:$versions.roomVersion"
+    testImplementation "androidx.arch.core:core-testing:$versions.archCompomentVersion"
+
+    // unit test
+    testImplementation "junit:junit:$versions.junitVersion"
+    testImplementation "androidx.test:core:$versions.androidxTest"
+    androidTestImplementation "com.google.truth:truth:$versions.truthVersion"
+    androidTestImplementation "androidx.test.ext:junit:$versions.androidxTestJunit"
+    androidTestImplementation "com.android.support.test:runner:$versions.androidTestRunner"
 }

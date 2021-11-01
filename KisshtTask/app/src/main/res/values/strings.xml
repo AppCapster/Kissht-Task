@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KisshtTask</string>
+    <string name="title_activity_jetpack">JetpackActivity</string>
 </resources>
