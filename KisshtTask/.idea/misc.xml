@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android/Kissht-Task/KisshtTask/app/src/main/res/layout/activity_canvas.xml" value="0.17300724637681159" />
+        <entry key="..\:/Android/Kissht-Task/KisshtTask/app/src/main/res/layout/activity_canvas.xml" value="0.25" />
         <entry key="..\:/Android/Kissht-Task/KisshtTask/app/src/main/res/layout/activity_main.xml" value="0.17300724637681159" />
+        <entry key="..\:/Android/Kissht-Task/KisshtTask/app/src/main/res/layout/layoutcanvas.xml" value="0.12360688956433637" />
       </map>
     </option>
   </component>

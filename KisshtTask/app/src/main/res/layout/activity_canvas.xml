@@ -6,4 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".ui.canvas.CanvasActivity">
 
+    <include
+        android:id="@+id/include"
+        layout="@layout/layout_canvas" />
+
+    <Button
+        android:id="@+id/btnCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnRect"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnRect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnUndo"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCircle" />
+
+    <Button
+        android:id="@+id/btnUndo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Undo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnRect" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
